@@ -7,5 +7,9 @@ module.exports = function() {
     conn.query("select * from noticias where id_noticias = 2", callback);
   };
 
+  this.salvarNoticia = (noticia, conn, callback) => {
+    conn.query("insert into noticias set ?", noticia, callback);
+  };
+
   return this;
 };
