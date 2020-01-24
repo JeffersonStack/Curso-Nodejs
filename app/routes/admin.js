@@ -18,8 +18,10 @@ module.exports = function(application) {
     req.assert("noticia", "Noticia é obrigatorio").notEmpty();
 
     const errors = req.validationErrors();
+
+    console.log(errors);
     if (errors) {
-      res.render("admin/form_add_noticia");
+      res.render("admin/form_add_noticia", { validacao: errors });
       return;
     }
 

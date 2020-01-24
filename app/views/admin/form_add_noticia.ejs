@@ -26,6 +26,15 @@
 
     <div class="form">
       <h1>Adicionar Noticia</h1>
+
+      <% if (typeof validacao !== 'undefined') { %>
+        <ul>
+          <% for( let i = 0; i < validacao.length; i++ ) { %>
+            <li><%= validacao[i].msg %></li>
+          <% } %>
+        </ul> 
+      <% } %> 
+
       <form action="/noticias/salvar" method="post">
         <div class="form-group">
           <label>Titulo</label>
